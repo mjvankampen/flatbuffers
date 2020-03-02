@@ -2966,16 +2966,16 @@ void TypeAliasesTest() {
   TEST_EQ(ta->f32(), 2.3f);
   TEST_EQ(ta->f64(), 2.3);
   using namespace flatbuffers;  // is_same
-  static_assert(is_same<decltype(ta->i8()), int8_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->i16()), int16_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->i32()), int32_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->i64()), int64_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->u8()), uint8_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->u16()), uint16_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->u32()), uint32_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->u64()), uint64_t>::value, "invalid type");
-  static_assert(is_same<decltype(ta->f32()), float>::value, "invalid type");
-  static_assert(is_same<decltype(ta->f64()), double>::value, "invalid type");
+  static_assert((is_same<decltype(ta->i8()), int8_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->i16()), int16_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->i32()), int32_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->i64()), int64_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->u8()), uint8_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->u16()), uint16_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->u32()), uint32_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->u64()), uint64_t>::value), "invalid type");
+  static_assert((is_same<decltype(ta->f32()), float>::value), "invalid type");
+  static_assert((is_same<decltype(ta->f64()), double>::value), "invalid type");
 }
 
 void EndianSwapTest() {
